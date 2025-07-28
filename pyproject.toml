@@ -1,0 +1,49 @@
+[project]
+name = "adpa"
+version = "0.1.0"
+description = "AST DuckDB Package Analyzer"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb>=0.10.0",
+    "sentence-transformers>=2.2.0,<6.0.0",
+    "numpy>=1.24.0",
+    "click>=8.0.0",
+    "rich-click>=1.8.9",
+    "loguru>=0.7.0",
+    "rich>=13.0.0,<15.0.0",
+    "pyarrow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0,<9.0.0", "mypy>=1.0.0", "black>=23.0.0,<25.0.0", "ruff>=0.1.0,<1.0.0"]
+graph = ["torch>=2.0.0", "torch-geometric>=2.6.1"]
+
+[project.scripts]
+adpa = "adpa.cli:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# CRITICAL: Tell hatchling where to find the package
+[tool.hatchling.build.targets.wheel]
+packages = ["src/adpa"]
+
+[tool.uv]
+link-mode = "copy"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true

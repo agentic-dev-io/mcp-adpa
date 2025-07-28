@@ -1,0 +1,54 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+# Python-spezifische Dateien
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# DuckDB-Dateien
+*.db
+*.duckdb
+
+# Virtuelle Umgebungen
+venv/
+env/
+ENV/
+
+# IDE-spezifische Dateien
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Protokolldateien
+*.log
+
+# Datenbank-Dateien
+*.db
+*.sqlite
+package_index.db
+# Virtual environments
+.venv
